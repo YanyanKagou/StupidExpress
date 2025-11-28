@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "stupid_express",
+  "version": "${version}",
+  "name": "Stupid Express",
+  "description": "i love among us",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/stupid_express/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "pro.fazeclan.river.stupid_express.client.StupidExpressClient"
+    ],
+    "main": [
+      "pro.fazeclan.river.stupid_express.StupidExpress"
+    ]
+  },
+  "mixins": [
+    "stupid_express.mixins.json",
+    {
+      "config": "stupid_express.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": "*",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "harpymodloader": "*"
+  }
+}
