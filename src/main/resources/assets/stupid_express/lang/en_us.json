@@ -1,5 +1,16 @@
 {
   "announcement.goals.amnesiac": "Steal a role from a body and act as that role!",
   "announcement.role.amnesiac": "Amnesiac!",
-  "announcement.win.amnesiac": "The Amnesiac Wins!"
+  "announcement.win.amnesiac": "The Amnesiac Wins!",
+
+  "announcement.goals.arsonist": "Douse all players and ignite them to win!",
+  "announcement.role.arsonist": "Arsonist!",
+  "announcement.win.arsonist": "The Arsonist Wins!",
+  "game.win.arsonist": "The Arsonist has doused all players and set the train ablaze!",
+  "hud.arsonist.doused.true": "Doused",
+  "hud.arsonist.doused.false": "Not Doused",
+  "item.stupid_express.jerry_can": "Jerry Can",
+  "item.stupid_express.lighter": "Lighter",
+  "death_reason.stupid_express.failed_ignite": "ignition misfire.",
+  "death_reason.stupid_express.ignited": "being lit ablaze."
 }

@@ -15,6 +15,15 @@
     ],
     "main": [
       "pro.fazeclan.river.stupid_express.StupidExpress"
+    ],
+    "cardinal-components": [
+      "pro.fazeclan.river.stupid_express.StupidExpressComponents"
+    ]
+  },
+  "custom": {
+    "cardinal-components": [
+      "stupid_express:doused",
+      "stupid_express:neutral_role_world"
     ]
   },
   "mixins": [

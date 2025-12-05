@@ -5,21 +5,29 @@ import dev.doctor4t.trainmurdermystery.api.TMMRoles;
 import dev.doctor4t.trainmurdermystery.cca.GameWorldComponent;
 import dev.doctor4t.trainmurdermystery.client.gui.RoleAnnouncementTexts;
 import dev.doctor4t.trainmurdermystery.util.AnnounceWelcomePayload;
+import lombok.Getter;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import org.agmas.harpymodloader.Harpymodloader;
 import org.agmas.harpymodloader.events.ModdedRoleAssigned;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pro.fazeclan.river.stupid_express.amnesiac.RoleSelectionHandler;
+import pro.fazeclan.river.stupid_express.arsonist.ArsonistItemGivingHandler;
+import pro.fazeclan.river.stupid_express.arsonist.OilDousingHandler;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 public class StupidExpress implements ModInitializer {
 
     public static String MOD_ID = "stupid_express";
 
-    private static final ArrayList<Role> ROLES = new ArrayList<>();
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+
+    @Getter
+    private static final HashMap<String, Role> ROLES = new HashMap<>();
 
     public static ResourceLocation AMNESIAC_ID = id("amnesiac");
 
@@ -30,6 +38,18 @@ public class StupidExpress implements ModInitializer {
             false,
             Role.MoodType.REAL,
             TMMRoles.CIVILIAN.getMaxSprintTime(),
+            false
+    ));
+
+    public static ResourceLocation ARSONIST_ID = id("arsonist");
+
+    public static Role ARSONIST = registerRole(new Role(
+            ARSONIST_ID,
+            0xfc9526,
+            false,
+            false,
+            Role.MoodType.REAL,
+            -1,
             true
     ));
 
@@ -37,16 +57,23 @@ public class StupidExpress implements ModInitializer {
     public void onInitialize() {
 
         Harpymodloader.setRoleMaximum(AMNESIAC, 1);
-
         RoleSelectionHandler.init();
 
+        Harpymodloader.setRoleMaximum(ARSONIST, 1);
+        OilDousingHandler.init();
+        ArsonistItemGivingHandler.init();
+
+        // mod stuff
+        ModItems.init();
+
+        // temp fix (hopefully)
         sendAnnouncements();
 
     }
 
     public static Role registerRole(Role role) {
         TMMRoles.registerRole(role);
-        ROLES.add(role);
+        ROLES.put(role.identifier().getPath(), role);
         return role;
     }
 
@@ -58,7 +85,7 @@ public class StupidExpress implements ModInitializer {
     // noelle's roles, so here's a workaround ig
     public void sendAnnouncements() {
         ModdedRoleAssigned.EVENT.register(((player, role) -> {
-            if (!ROLES.contains(role)) {
+            if (!ROLES.containsValue(role)) {
                 return;
             }
             GameWorldComponent gameWorldComponent = GameWorldComponent.KEY.get(player.level());
@@ -72,4 +99,5 @@ public class StupidExpress implements ModInitializer {
             );
         }));
     }
+
 }
