@@ -17,6 +17,7 @@ import org.slf4j.LoggerFactory;
 import pro.fazeclan.river.stupid_express.amnesiac.RoleSelectionHandler;
 import pro.fazeclan.river.stupid_express.arsonist.ArsonistItemGivingHandler;
 import pro.fazeclan.river.stupid_express.arsonist.OilDousingHandler;
+import pro.fazeclan.river.stupid_express.necromancer.RevivalSelectionHandler;
 
 import java.util.HashMap;
 
@@ -53,15 +54,30 @@ public class StupidExpress implements ModInitializer {
             true
     ));
 
+    public static ResourceLocation NECROMANCER_ID = id("necromancer");
+
+    public static Role NECROMANCER = registerRole(new Role(
+            NECROMANCER_ID,
+            0x9457ff,
+            false,
+            true,
+            Role.MoodType.FAKE,
+            -1,
+            true
+    ));
+
     @Override
     public void onInitialize() {
 
-        //Harpymodloader.setRoleMaximum(AMNESIAC, 1);
+        Harpymodloader.setRoleMaximum(AMNESIAC, 3);
         RoleSelectionHandler.init();
 
         Harpymodloader.setRoleMaximum(ARSONIST, 1);
         OilDousingHandler.init();
         ArsonistItemGivingHandler.init();
+
+        Harpymodloader.setRoleMaximum(NECROMANCER, 1);
+        RevivalSelectionHandler.init();
 
         // mod stuff
         ModItems.init();

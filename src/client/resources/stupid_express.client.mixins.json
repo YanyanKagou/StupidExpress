@@ -7,7 +7,8 @@
     "arsonist.ArsonistHudMixin",
     "neutral.NeutralRoleAnnouncementMixin",
     "neutral.NeutralRoleTextRendering",
-    "amnesiac.AmnesiacHudMixin"
+    "amnesiac.AmnesiacHudMixin",
+    "necromancer.NecromancerHudMixin"
   ],
   "injectors": {
     "defaultRequire": 1

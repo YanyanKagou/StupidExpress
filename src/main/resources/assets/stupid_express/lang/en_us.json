@@ -13,5 +13,11 @@
   "item.stupid_express.jerry_can": "Jerry Can",
   "item.stupid_express.lighter": "Lighter",
   "death_reason.stupid_express.failed_ignite": "ignition misfire.",
-  "death_reason.stupid_express.ignited": "being lit ablaze."
+  "death_reason.stupid_express.ignited": "being lit ablaze.",
+
+  "announcement.goals.necromancer": "Bring back the dead to have them do your bidding!",
+  "announcement.role.necromancer": "Necromancer!",
+  "announcement.win.necromancer": "Necromancer Wins!",
+  "hud.necromancer.possible_revive": "Interact to revive this player as a killer!",
+  "hud.necromancer.cooldown": "You must wait %ss before attempting this."
 }

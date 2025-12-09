@@ -8,6 +8,7 @@ import org.ladysnake.cca.api.v3.world.WorldComponentFactoryRegistry;
 import org.ladysnake.cca.api.v3.world.WorldComponentInitializer;
 import pro.fazeclan.river.stupid_express.arsonist.cca.DousedPlayerComponent;
 import pro.fazeclan.river.stupid_express.neutral.NeutralRoleWorldComponent;
+import pro.fazeclan.river.stupid_express.neutral.cca.AbilityCooldownComponent;
 
 public class StupidExpressComponents implements EntityComponentInitializer, WorldComponentInitializer {
 
@@ -18,6 +19,9 @@ public class StupidExpressComponents implements EntityComponentInitializer, Worl
         registry.beginRegistration(Player.class, DousedPlayerComponent.KEY)
                 .respawnStrategy(RespawnCopyStrategy.NEVER_COPY)
                 .end(DousedPlayerComponent::new);
+        registry.beginRegistration(Player.class, AbilityCooldownComponent.KEY)
+                .respawnStrategy(RespawnCopyStrategy.NEVER_COPY)
+                .end(AbilityCooldownComponent::new);
     }
 
     @Override
