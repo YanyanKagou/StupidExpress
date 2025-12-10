@@ -15,10 +15,10 @@ import org.agmas.harpymodloader.Harpymodloader;
 import org.agmas.harpymodloader.events.ModdedRoleAssigned;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pro.fazeclan.river.stupid_express.amnesiac.RoleSelectionHandler;
-import pro.fazeclan.river.stupid_express.arsonist.ArsonistItemGivingHandler;
-import pro.fazeclan.river.stupid_express.arsonist.OilDousingHandler;
-import pro.fazeclan.river.stupid_express.necromancer.RevivalSelectionHandler;
+import pro.fazeclan.river.stupid_express.role.amnesiac.RoleSelectionHandler;
+import pro.fazeclan.river.stupid_express.role.arsonist.ArsonistItemGivingHandler;
+import pro.fazeclan.river.stupid_express.role.arsonist.OilDousingHandler;
+import pro.fazeclan.river.stupid_express.role.necromancer.RevivalSelectionHandler;
 
 import java.util.HashMap;
 
@@ -67,10 +67,12 @@ public class StupidExpress implements ModInitializer {
             true
     ));
 
+    public static int LOVERS_COLOR = 0xf38aff;
+
     @Override
     public void onInitialize() {
 
-        Harpymodloader.setRoleMaximum(AMNESIAC, 3);
+        Harpymodloader.setRoleMaximum(AMNESIAC, 1);
         RoleSelectionHandler.init();
 
         Harpymodloader.setRoleMaximum(ARSONIST, 1);

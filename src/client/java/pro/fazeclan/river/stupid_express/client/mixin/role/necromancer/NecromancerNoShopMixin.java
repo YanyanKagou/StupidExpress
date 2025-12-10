@@ -1,0 +1,40 @@
+package pro.fazeclan.river.stupid_express.client.mixin.role.necromancer;
+
+import dev.doctor4t.trainmurdermystery.cca.GameWorldComponent;
+import dev.doctor4t.trainmurdermystery.client.gui.screen.ingame.LimitedInventoryScreen;
+import net.minecraft.client.player.LocalPlayer;
+import org.objectweb.asm.Opcodes;
+import org.spongepowered.asm.mixin.Final;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import pro.fazeclan.river.stupid_express.StupidExpress;
+
+@Mixin(value = LimitedInventoryScreen.class)
+public class NecromancerNoShopMixin {
+
+    @Shadow
+    @Final
+    public LocalPlayer player;
+
+    @Inject(
+            method = "init",
+            at = @At(
+                    value = "FIELD",
+                    target = "Ldev/doctor4t/trainmurdermystery/client/gui/screen/ingame/LimitedInventoryScreen;y:I",
+                    opcode = Opcodes.GETFIELD,
+                    shift = At.Shift.AFTER
+            ),
+            cancellable = true
+    )
+    private void stupidexpress$noshop(CallbackInfo ci) {
+        GameWorldComponent gameWorldComponent = GameWorldComponent.KEY.get(this.player.level());
+        if (gameWorldComponent.isRole(this.player, StupidExpress.NECROMANCER)) {
+            ci.cancel();
+        }
+    }
+
+}
+

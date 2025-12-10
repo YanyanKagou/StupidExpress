@@ -19,5 +19,10 @@
   "announcement.role.necromancer": "Necromancer!",
   "announcement.win.necromancer": "Necromancer Wins!",
   "hud.necromancer.possible_revive": "Interact to revive this player as a killer!",
-  "hud.necromancer.cooldown": "You must wait %ss before attempting this."
+  "hud.necromancer.cooldown": "You must wait %ss before attempting this.",
+
+  "announcement.win.lovers": "The Lovers Wins!",
+  "game.win.lovers": "The pair managed to stay alive until they were the last two standing!",
+  "tip.lovers.partner": "Your partner is %s!",
+  "death_reason.stupid_express.broken_heart": "couldn't bear to be without them."
 }

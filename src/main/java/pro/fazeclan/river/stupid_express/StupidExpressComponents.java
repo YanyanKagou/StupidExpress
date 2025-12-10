@@ -6,9 +6,11 @@ import org.ladysnake.cca.api.v3.entity.EntityComponentInitializer;
 import org.ladysnake.cca.api.v3.entity.RespawnCopyStrategy;
 import org.ladysnake.cca.api.v3.world.WorldComponentFactoryRegistry;
 import org.ladysnake.cca.api.v3.world.WorldComponentInitializer;
-import pro.fazeclan.river.stupid_express.arsonist.cca.DousedPlayerComponent;
-import pro.fazeclan.river.stupid_express.neutral.NeutralRoleWorldComponent;
-import pro.fazeclan.river.stupid_express.neutral.cca.AbilityCooldownComponent;
+import pro.fazeclan.river.stupid_express.modifier.lovers.cca.LoversModifierWorldComponent;
+import pro.fazeclan.river.stupid_express.role.arsonist.cca.DousedPlayerComponent;
+import pro.fazeclan.river.stupid_express.role.necromancer.cca.NecromancerComponent;
+import pro.fazeclan.river.stupid_express.role.neutral.NeutralRoleWorldComponent;
+import pro.fazeclan.river.stupid_express.role.neutral.cca.AbilityCooldownComponent;
 
 public class StupidExpressComponents implements EntityComponentInitializer, WorldComponentInitializer {
 
@@ -22,10 +24,14 @@ public class StupidExpressComponents implements EntityComponentInitializer, Worl
         registry.beginRegistration(Player.class, AbilityCooldownComponent.KEY)
                 .respawnStrategy(RespawnCopyStrategy.NEVER_COPY)
                 .end(AbilityCooldownComponent::new);
+        registry.beginRegistration(Player.class, NecromancerComponent.KEY)
+                .respawnStrategy(RespawnCopyStrategy.NEVER_COPY)
+                .end(NecromancerComponent::new);
     }
 
     @Override
     public void registerWorldComponentFactories(WorldComponentFactoryRegistry registry) {
         registry.register(NeutralRoleWorldComponent.KEY, NeutralRoleWorldComponent::new);
+        registry.register(LoversModifierWorldComponent.KEY, LoversModifierWorldComponent::new);
     }
 }
