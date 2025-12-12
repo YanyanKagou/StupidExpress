@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import pro.fazeclan.river.stupid_express.StupidExpress;
 import pro.fazeclan.river.stupid_express.client.StupidExpressClient;
+import pro.fazeclan.river.stupid_express.role.necromancer.cca.NecromancerComponent;
 import pro.fazeclan.river.stupid_express.role.neutral.cca.AbilityCooldownComponent;
 
 @Mixin(RoleNameRenderer.class)
@@ -34,6 +35,10 @@ public class NecromancerHudMixin {
 
             Component status = Component.translatable("hud.necromancer.possible_revive");
 
+            NecromancerComponent nc = NecromancerComponent.KEY.get(player.level());
+            if (nc.getAvailableRevives() < 1) {
+                status = Component.translatable("hud.necromancer.no_possible_revive");
+            }
             AbilityCooldownComponent cooldown = AbilityCooldownComponent.KEY.get(p);
             if (cooldown.hasCooldown()) {
                 status = Component.translatable("hud.necromancer.cooldown", cooldown.getCooldown()/20);

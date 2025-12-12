@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+import pro.fazeclan.river.stupid_express.StupidExpress;
 import pro.fazeclan.river.stupid_express.role.necromancer.cca.NecromancerComponent;
 
 @Mixin(GameFunctions.class)
@@ -26,18 +27,20 @@ public class NecromancerStatsMixin {
             var nc = NecromancerComponent.KEY.get(victim.level());
             nc.increaseAvailableRevives();
             nc.sync();
+            StupidExpress.LOGGER.info("necromancer increased by 1");
         }
 
     }
 
     @Inject(
-            method = "tryResetTrain",
+            method = "finalizeGame",
             at = @At("TAIL")
     )
-    private static void stupidexpress$resetNecroStat(ServerLevel serverWorld, CallbackInfoReturnable<Boolean> cir) {
+    private static void stupidexpress$resetNecroStat(ServerLevel world, CallbackInfo ci) {
 
-        var component = NecromancerComponent.KEY.get(serverWorld);
+        var component = NecromancerComponent.KEY.get(world);
         component.reset();
+        StupidExpress.LOGGER.info("necromancer reset");
 
     }
 

@@ -19,6 +19,7 @@
   "announcement.role.necromancer": "Necromancer!",
   "announcement.win.necromancer": "Necromancer Wins!",
   "hud.necromancer.possible_revive": "Interact to revive this player as a killer!",
+  "hud.necromancer.no_possible_revive": "One of your killer cohorts must die before you revive!",
   "hud.necromancer.cooldown": "You must wait %ss before attempting this.",
 
   "announcement.win.lovers": "The Lovers Win!",
