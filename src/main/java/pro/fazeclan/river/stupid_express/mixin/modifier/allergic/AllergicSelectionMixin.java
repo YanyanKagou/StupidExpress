@@ -32,6 +32,9 @@ public class AllergicSelectionMixin {
         if (HarpyModLoaderConfig.HANDLER.instance().disabled.contains(StupidExpress.ALLERGIC.identifier().toString())) {
             return;
         }
+        if (ThreadLocalRandom.current().nextInt(0, 3) != 0) {
+            return;
+        }
 
 //        var innocentPlayers = players.stream().filter(gameWorldComponent::isInnocent).toList();
 
@@ -59,8 +62,8 @@ public class AllergicSelectionMixin {
                 if (GameWorldComponent.KEY.get(player.level()).getRole(player).identifier().equals(ResourceLocation.parse("harpysimpleroles:doctor"))) {
                     player.sendSystemMessage(
                             Component.translatable(
-                                    "hud.allergic.doctor_heads_up"
-                            ).withColor(StupidExpress.ALLERGIC_COLOR),
+                                    "hud.allergic.doctor_heads_up" // This sends to players with a role from a different mod. I'm fucking genius.
+                            ).withColor(StupidExpress.ALLERGIC_COLOR), // (Kid named genius:)
                             true
                     );
                 }
