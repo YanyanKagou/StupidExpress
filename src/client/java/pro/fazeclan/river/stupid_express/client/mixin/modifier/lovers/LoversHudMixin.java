@@ -13,7 +13,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import pro.fazeclan.river.stupid_express.StupidExpress;
+import pro.fazeclan.river.stupid_express.SERoles;
 import pro.fazeclan.river.stupid_express.client.StupidExpressClient;
 import pro.fazeclan.river.stupid_express.modifier.lovers.cca.LoversComponent;
 
@@ -39,7 +39,7 @@ public abstract class LoversHudMixin {
 
             //Component status = Component.translatable("tip.lovers.partner", component.getPartner(Minecraft.getInstance().player).getName());
             var status = Component.translatable("hud.lovers.partner");
-            context.drawString(renderer, status, -renderer.width(status) / 2, 32, StupidExpress.LOVERS_COLOR);
+            context.drawString(renderer, status, -renderer.width(status) / 2, 32, SERoles.LOVERS.color());
 
             context.pose().popPose();
         }
@@ -75,7 +75,7 @@ public abstract class LoversHudMixin {
                     name,
                     -renderer.width(name) / 2,
                     32,
-                    StupidExpress.LOVERS_COLOR | (int) (nametagAlpha * 255.0F) << 24
+                    SERoles.LOVERS.color() | (int) (nametagAlpha * 255.0F) << 24
             );
 
             context.pose().popPose();

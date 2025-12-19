@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import pro.fazeclan.river.stupid_express.StupidExpress;
+import pro.fazeclan.river.stupid_express.SERoles;
 import pro.fazeclan.river.stupid_express.modifier.lovers.cca.LoversComponent;
 
 import java.util.List;
@@ -26,10 +26,10 @@ public class LoversSelectionMixin {
     )
     private void assignLovers(ServerLevel serverWorld, GameWorldComponent gameWorldComponent, List<ServerPlayer> players, CallbackInfo ci) {
 
-        if (HarpyModLoaderConfig.HANDLER.instance().disabled.contains(StupidExpress.LOVERS.identifier().getPath())) {
+        if (HarpyModLoaderConfig.HANDLER.instance().disabled.contains(SERoles.LOVERS.identifier().getPath())) {
             return;
         }
-        if (HarpyModLoaderConfig.HANDLER.instance().disabled.contains(StupidExpress.LOVERS.identifier().toString())) {
+        if (HarpyModLoaderConfig.HANDLER.instance().disabled.contains(SERoles.LOVERS.identifier().toString())) {
             return;
         }
 
@@ -55,14 +55,14 @@ public class LoversSelectionMixin {
                 Component.translatable(
                         "hud.lovers.notification",
                         loverTwo.getName()
-                ).withColor(StupidExpress.LOVERS_COLOR),
+                ).withColor(SERoles.LOVERS.color()),
                 true
         );
         loverTwo.sendSystemMessage(
                 Component.translatable(
                         "hud.lovers.notification",
                         loverOne.getName()
-                ).withColor(StupidExpress.LOVERS_COLOR),
+                ).withColor(SERoles.LOVERS.color()),
                 true
         );
 
