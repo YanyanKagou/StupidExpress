@@ -1,10 +1,10 @@
 package pro.fazeclan.river.stupid_express;
 
-import dev.doctor4t.trainmurdermystery.api.Role;
-import dev.doctor4t.trainmurdermystery.api.TMMRoles;
-import dev.doctor4t.trainmurdermystery.cca.PlayerPoisonComponent;
-import dev.doctor4t.trainmurdermystery.event.AllowPlayerDeath;
-import dev.doctor4t.trainmurdermystery.index.TMMSounds;
+import dev.doctor4t.wathe.api.Role;
+import dev.doctor4t.wathe.api.WatheRoles;
+import dev.doctor4t.wathe.cca.PlayerPoisonComponent;
+import dev.doctor4t.wathe.api.event.AllowPlayerDeath;
+import dev.doctor4t.wathe.index.WatheSounds;
 import lombok.Getter;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
 import net.minecraft.sounds.SoundSource;
@@ -29,7 +29,7 @@ public class SERoles {
             true,
             false,
             Role.MoodType.REAL,
-            TMMRoles.CIVILIAN.getMaxSprintTime(),
+            WatheRoles.CIVILIAN.getMaxSprintTime(),
             false
     ));
 
@@ -122,25 +122,25 @@ public class SERoles {
 
         Harpymodloader.setRoleMaximum(ALLERGIC, 0); // fake role 2, courtesy of you!
 
-        AllowPlayerDeath.EVENT.register((player, identifier) -> {
-            AllergicComponent allergy = AllergicComponent.KEY.get(player);
-            PlayerPoisonComponent poison = PlayerPoisonComponent.KEY.get(player);
+        AllowPlayerDeath.EVENT.register(((victim, killer, resourceLocation) -> {
+            AllergicComponent allergy = AllergicComponent.KEY.get(victim);
+            PlayerPoisonComponent poison = PlayerPoisonComponent.KEY.get(victim);
             if (allergy.isAllergic()) {
-                if (poison.poisoner != player.getUUID()) {
+                if (poison.poisoner != victim.getUUID()) {
                     if (allergy.armor > 0) {
-                        player.level().playSound(player, player.getOnPos().above(1), TMMSounds.ITEM_PSYCHO_ARMOUR, SoundSource.MASTER, 5.0F, 1.0F);
-                        poison.setPoisonTicks(-1, player.getUUID());
+                        victim.level().playSound(victim, victim.getOnPos().above(1), WatheSounds.ITEM_PSYCHO_ARMOUR, SoundSource.MASTER, 5.0F, 1.0F);
+                        poison.setPoisonTicks(-1, victim.getUUID());
                         allergy.armor--;
                         return false;
                     }
                 }
             }
             return true;
-        });
+        }));
     }
 
     public static Role registerRole(Role role) {
-        TMMRoles.registerRole(role);
+        WatheRoles.registerRole(role);
         ROLES.put(role.identifier().getPath(), role);
         return role;
     }

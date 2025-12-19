@@ -1,14 +1,9 @@
 package pro.fazeclan.river.stupid_express.mixin.role.avaricious;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import dev.doctor4t.trainmurdermystery.cca.GameRoundEndComponent;
-import dev.doctor4t.trainmurdermystery.cca.GameTimeComponent;
-import dev.doctor4t.trainmurdermystery.cca.GameWorldComponent;
-import dev.doctor4t.trainmurdermystery.cca.PlayerShopComponent;
-import dev.doctor4t.trainmurdermystery.game.GameConstants;
-import dev.doctor4t.trainmurdermystery.game.GameFunctions;
-import dev.doctor4t.trainmurdermystery.game.MurderGameMode;
-import dev.doctor4t.trainmurdermystery.index.TMMSounds;
+import dev.doctor4t.wathe.cca.GameTimeComponent;
+import dev.doctor4t.wathe.cca.GameWorldComponent;
+import dev.doctor4t.wathe.game.gamemode.MurderGameMode;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundSetActionBarTextPacket;
 import net.minecraft.server.level.ServerLevel;
@@ -33,9 +28,7 @@ public class AvariciousTimer {
             at = @At("TAIL")
     )
     private void actionbar(
-            ServerLevel serverWorld,
-            GameWorldComponent gameWorldComponent,
-            CallbackInfo ci
+            ServerLevel serverWorld, GameWorldComponent gameWorldComponent, CallbackInfo ci
     ) {
 
         // Optional: stop when game ends

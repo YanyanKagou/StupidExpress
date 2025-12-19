@@ -1,9 +1,8 @@
 package pro.fazeclan.river.stupid_express.client.mixin.role.arsonist;
 
-import dev.doctor4t.trainmurdermystery.cca.GameWorldComponent;
-import dev.doctor4t.trainmurdermystery.client.TMMClient;
-import dev.doctor4t.trainmurdermystery.client.gui.RoleNameRenderer;
-import dev.doctor4t.trainmurdermystery.game.GameFunctions;
+import dev.doctor4t.wathe.cca.GameWorldComponent;
+import dev.doctor4t.wathe.client.WatheClient;
+import dev.doctor4t.wathe.client.gui.RoleNameRenderer;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -31,7 +30,7 @@ public class ArsonistHudMixin {
         if (StupidExpressClient.target == null) {
             return;
         }
-        if (gameWorldComponent.isRole(Minecraft.getInstance().player, SERoles.ARSONIST) && !TMMClient.isPlayerSpectatingOrCreative()) {
+        if (gameWorldComponent.isRole(Minecraft.getInstance().player, SERoles.ARSONIST) && !WatheClient.isPlayerSpectatingOrCreative()) {
             context.pose().pushPose();
             context.pose().translate(context.guiWidth() / 2.0f, context.guiHeight() / 2.0f + 6.0f, 0.0f);
             context.pose().scale(0.6f, 0.6f, 1.0f);

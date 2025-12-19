@@ -1,11 +1,11 @@
 package pro.fazeclan.river.stupid_express.role.necromancer;
 
-import dev.doctor4t.trainmurdermystery.api.TMMRoles;
-import dev.doctor4t.trainmurdermystery.cca.GameWorldComponent;
-import dev.doctor4t.trainmurdermystery.cca.PlayerShopComponent;
-import dev.doctor4t.trainmurdermystery.client.gui.RoleAnnouncementTexts;
-import dev.doctor4t.trainmurdermystery.entity.PlayerBodyEntity;
-import dev.doctor4t.trainmurdermystery.util.AnnounceWelcomePayload;
+import dev.doctor4t.wathe.api.WatheRoles;
+import dev.doctor4t.wathe.cca.GameWorldComponent;
+import dev.doctor4t.wathe.cca.PlayerShopComponent;
+import dev.doctor4t.wathe.client.gui.RoleAnnouncementTexts;
+import dev.doctor4t.wathe.entity.PlayerBodyEntity;
+import dev.doctor4t.wathe.util.AnnounceWelcomePayload;
 import net.fabricmc.fabric.api.event.player.UseEntityCallback;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.server.level.ServerLevel;
@@ -62,12 +62,12 @@ public class RevivalSelectionHandler {
             nc.sync();
 
             // get random killer role
-            var roles = new ArrayList<>(TMMRoles.ROLES);
+            var roles = new ArrayList<>(WatheRoles.ROLES);
             roles.remove(SERoles.NECROMANCER);
             roles.removeIf(role -> Harpymodloader.VANNILA_ROLES.contains(role)
                     || !role.canUseKiller()
                     || HarpyModLoaderConfig.HANDLER.instance().disabled.contains(role.identifier().getPath()));
-            if (roles.isEmpty()) roles.add(TMMRoles.KILLER);
+            if (roles.isEmpty()) roles.add(WatheRoles.KILLER);
             Collections.shuffle(roles);
 
             // revive player and give them the role
@@ -86,7 +86,7 @@ public class RevivalSelectionHandler {
                 ServerPlayNetworking.send(
                         revived,
                         new AnnounceWelcomePayload(
-                                RoleAnnouncementTexts.ROLE_ANNOUNCEMENT_TEXTS.indexOf(TMMRoles.KILLER),
+                                RoleAnnouncementTexts.ROLE_ANNOUNCEMENT_TEXTS.indexOf(RoleAnnouncementTexts.KILLER),
                                 gameWorldComponent.getAllKillerTeamPlayers().size(),
                                 0
                         )

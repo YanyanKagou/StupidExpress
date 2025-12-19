@@ -1,6 +1,6 @@
 package pro.fazeclan.river.stupid_express.mixin.modifier.allergic;
 
-import dev.doctor4t.trainmurdermystery.cca.GameWorldComponent;
+import dev.doctor4t.wathe.cca.GameWorldComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;

@@ -1,6 +1,6 @@
 package pro.fazeclan.river.stupid_express.client.mixin;
 
-import dev.doctor4t.trainmurdermystery.client.TMMClient;
+import dev.doctor4t.wathe.client.WatheClient;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -12,7 +12,7 @@ import pro.fazeclan.river.stupid_express.modifier.allergic.cca.AllergicComponent
 
 import java.awt.*;
 
-@Mixin(TMMClient.class)
+@Mixin(WatheClient.class)
 public abstract class InstinctMixin {
 
     @Inject(method = "isInstinctEnabled", at = @At("HEAD"), cancellable = true)

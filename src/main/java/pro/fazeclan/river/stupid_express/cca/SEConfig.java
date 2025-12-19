@@ -24,6 +24,10 @@ public class SEConfig implements AutoSyncedComponent {
     @Setter
     private boolean necromancerHasShop = false;
 
+    @Getter
+    @Setter
+    private boolean arsonistKeepsGameGoing = false;
+
     public SEConfig(Level level) {
         this.level = level;
     }
@@ -31,10 +35,12 @@ public class SEConfig implements AutoSyncedComponent {
     @Override
     public void readFromNbt(CompoundTag tag, HolderLookup.Provider registryLookup) {
         this.necromancerHasShop = tag.contains("necromancer_has_shop") && tag.getBoolean("necromancer_has_shop");
+        this.arsonistKeepsGameGoing = tag.contains("arsonist_keep_alive") && tag.getBoolean("arsonist_keep_alive");
     }
 
     @Override
     public void writeToNbt(CompoundTag tag, HolderLookup.Provider registryLookup) {
         tag.putBoolean("necromancer_has_shop", this.necromancerHasShop);
+        tag.putBoolean("arsonist_keep_alive", this.arsonistKeepsGameGoing);
     }
 }

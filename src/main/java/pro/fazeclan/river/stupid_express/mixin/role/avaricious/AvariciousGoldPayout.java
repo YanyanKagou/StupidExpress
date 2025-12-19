@@ -1,12 +1,12 @@
 package pro.fazeclan.river.stupid_express.mixin.role.avaricious;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import dev.doctor4t.trainmurdermystery.cca.GameTimeComponent;
-import dev.doctor4t.trainmurdermystery.cca.GameWorldComponent;
-import dev.doctor4t.trainmurdermystery.cca.PlayerShopComponent;
-import dev.doctor4t.trainmurdermystery.game.GameFunctions;
-import dev.doctor4t.trainmurdermystery.game.MurderGameMode;
-import dev.doctor4t.trainmurdermystery.index.TMMSounds;
+import dev.doctor4t.wathe.cca.GameTimeComponent;
+import dev.doctor4t.wathe.cca.GameWorldComponent;
+import dev.doctor4t.wathe.cca.PlayerShopComponent;
+import dev.doctor4t.wathe.game.GameFunctions;
+import dev.doctor4t.wathe.game.gamemode.MurderGameMode;
+import dev.doctor4t.wathe.index.WatheSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundSetActionBarTextPacket;
 import net.minecraft.server.level.ServerLevel;
@@ -28,9 +28,7 @@ public class AvariciousGoldPayout {
             at = @At("TAIL")
     )
     private void payout(
-            ServerLevel serverWorld,
-            GameWorldComponent gameWorldComponent,
-            CallbackInfo ci
+            ServerLevel serverWorld, GameWorldComponent gameWorldComponent, CallbackInfo ci
     ) {
         GameTimeComponent timeComponent = GameTimeComponent.KEY.get(serverWorld);
         long time = timeComponent.time;
@@ -58,7 +56,7 @@ public class AvariciousGoldPayout {
             if (nearbyPlayers > 0) {
                 PlayerShopComponent.KEY.get(player).addToBalance(nearbyPlayers * AvariciousGoldHandler.PAYOUT_PER_PLAYER);
                 // TODO: Isn't working currently, fix sound cue.
-                player.playSound(TMMSounds.UI_SHOP_BUY, 10.0f, 0.5f);
+                player.playSound(WatheSounds.UI_SHOP_BUY, 10.0f, 0.5f);
             }
         }
     }

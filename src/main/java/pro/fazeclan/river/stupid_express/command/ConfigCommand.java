@@ -19,6 +19,11 @@ public class ConfigCommand {
                                         .executes(ConfigCommand::necromancerHasShopExecute)
                                 )
                         )
+                        .then(Commands.literal("arsonist_keeps_game_going")
+                                .then(Commands.argument("value", BoolArgumentType.bool())
+                                        .executes(ConfigCommand::arsonistKeepAliveExecute)
+                                )
+                        )
         );
     }
 
@@ -31,6 +36,18 @@ public class ConfigCommand {
         config.sync();
 
         source.sendSystemMessage(Component.translatable("commands.stupid_express.set_config_value", "necromancer_has_shop", value));
+        return 1;
+    }
+
+    private static int arsonistKeepAliveExecute(CommandContext<CommandSourceStack> ctx) {
+        var source = ctx.getSource();
+        var config = SEConfig.KEY.get(source.getLevel());
+        var value = ctx.getArgument("value", Boolean.class);
+
+        config.setArsonistKeepsGameGoing(value);
+        config.sync();
+
+        source.sendSystemMessage(Component.translatable("commands.stupid_express.set_config_value", "arsonist_keeps_game_going", value));
         return 1;
     }
 

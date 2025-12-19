@@ -1,7 +1,7 @@
 package pro.fazeclan.river.stupid_express.role.neutral;
 
-import dev.doctor4t.trainmurdermystery.api.Role;
-import dev.doctor4t.trainmurdermystery.client.gui.RoleAnnouncementTexts;
+import dev.doctor4t.wathe.api.Role;
+import dev.doctor4t.wathe.client.gui.RoleAnnouncementTexts;
 import lombok.Getter;
 import lombok.Setter;
 import net.minecraft.core.HolderLookup;

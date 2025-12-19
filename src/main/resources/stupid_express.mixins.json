@@ -10,6 +10,7 @@
     "modifier.lovers.LoversDeathMixin",
     "modifier.lovers.LoversSelectionMixin",
     "modifier.lovers.LoversWinConditionMixin",
+    "role.arsonist.ArsonistKeepAliveMixin",
     "role.arsonist.ArsonistRemoveDousedMixin",
     "role.avaricious.AvariciousGoldPayout",
     "role.avaricious.AvariciousPassiveIncomeDestroyer",

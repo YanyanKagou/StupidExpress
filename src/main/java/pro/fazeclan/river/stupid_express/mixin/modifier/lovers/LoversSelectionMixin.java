@@ -1,7 +1,7 @@
 package pro.fazeclan.river.stupid_express.mixin.modifier.lovers;
 
-import dev.doctor4t.trainmurdermystery.api.TMMRoles;
-import dev.doctor4t.trainmurdermystery.cca.GameWorldComponent;
+import dev.doctor4t.wathe.api.WatheRoles;
+import dev.doctor4t.wathe.cca.GameWorldComponent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -34,7 +34,7 @@ public class LoversSelectionMixin {
         }
 
         var innocentPlayers = players.stream().filter(gameWorldComponent::isInnocent)
-                .filter(p -> !gameWorldComponent.isRole(p, TMMRoles.VIGILANTE)).toList();
+                .filter(p -> !gameWorldComponent.isRole(p, WatheRoles.VIGILANTE)).toList();
 
         var loverOne = players.get(ThreadLocalRandom.current().nextInt(players.size() - 1));
         var loverTwo = players.getFirst();

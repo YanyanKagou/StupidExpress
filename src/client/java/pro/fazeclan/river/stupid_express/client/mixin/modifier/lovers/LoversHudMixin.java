@@ -1,7 +1,7 @@
 package pro.fazeclan.river.stupid_express.client.mixin.modifier.lovers;
 
-import dev.doctor4t.trainmurdermystery.client.TMMClient;
-import dev.doctor4t.trainmurdermystery.client.gui.RoleNameRenderer;
+import dev.doctor4t.wathe.client.WatheClient;
+import dev.doctor4t.wathe.client.gui.RoleNameRenderer;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -28,7 +28,7 @@ public abstract class LoversHudMixin {
     private static void loversHud(Font renderer, LocalPlayer player, GuiGraphics context, DeltaTracker tickCounter, CallbackInfo ci) {
         var component = LoversComponent.KEY.get(player);
         if (component.isLover()
-                && !TMMClient.isPlayerSpectatingOrCreative()) {
+                && !WatheClient.isPlayerSpectatingOrCreative()) {
             context.pose().pushPose();
 
             if (Minecraft.getInstance().player.connection.getPlayerInfo(component.getLover()) == null) return;
@@ -57,7 +57,7 @@ public abstract class LoversHudMixin {
         if (lover == null) {
             return;
         }
-        if (TMMClient.isPlayerSpectatingOrCreative()) {
+        if (WatheClient.isPlayerSpectatingOrCreative()) {
             context.pose().pushPose();
             context.pose().translate(context.guiWidth() / 2.0f, context.guiHeight() / 2.0f - 35.0f, 0.0f);
             context.pose().scale(0.6f, 0.6f, 1.0f);

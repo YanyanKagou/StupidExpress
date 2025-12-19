@@ -1,6 +1,6 @@
 package pro.fazeclan.river.stupid_express.mixin.modifier.allergic;
 
-import dev.doctor4t.trainmurdermystery.cca.PlayerPoisonComponent;
+import dev.doctor4t.wathe.cca.PlayerPoisonComponent;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;

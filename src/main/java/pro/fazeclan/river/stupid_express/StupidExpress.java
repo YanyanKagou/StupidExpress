@@ -1,13 +1,13 @@
 package pro.fazeclan.river.stupid_express;
 
-import dev.doctor4t.trainmurdermystery.api.Role;
-import dev.doctor4t.trainmurdermystery.api.TMMRoles;
-import dev.doctor4t.trainmurdermystery.cca.GameWorldComponent;
-import dev.doctor4t.trainmurdermystery.cca.PlayerPoisonComponent;
-import dev.doctor4t.trainmurdermystery.client.gui.RoleAnnouncementTexts;
-import dev.doctor4t.trainmurdermystery.event.AllowPlayerDeath;
-import dev.doctor4t.trainmurdermystery.index.TMMSounds;
-import dev.doctor4t.trainmurdermystery.util.AnnounceWelcomePayload;
+import dev.doctor4t.wathe.api.Role;
+import dev.doctor4t.wathe.api.WatheRoles;
+import dev.doctor4t.wathe.cca.GameWorldComponent;
+import dev.doctor4t.wathe.cca.PlayerPoisonComponent;
+import dev.doctor4t.wathe.client.gui.RoleAnnouncementTexts;
+import dev.doctor4t.wathe.api.event.AllowPlayerDeath;
+import dev.doctor4t.wathe.index.WatheSounds;
+import dev.doctor4t.wathe.util.AnnounceWelcomePayload;
 import lombok.Getter;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.resources.ResourceLocation;
