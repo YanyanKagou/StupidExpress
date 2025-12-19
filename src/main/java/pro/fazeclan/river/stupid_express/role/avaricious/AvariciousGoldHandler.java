@@ -11,7 +11,12 @@ public class AvariciousGoldHandler {
 
     public static int TIMER_TICKS = GameConstants.getInTicks(1,0);
 
-    public static double MAX_DISTANCE = 7;
+    public static double MAX_DISTANCE = 5.5;
+
+    public static int STARTING_BALANCE = 50;
+    public static int PAYOUT_PER_PLAYER = 30;
+
+    public static long gameStartTime = -1;
 
     public static void onGameStart() {
         ModdedRoleAssigned.EVENT.register(((player, role) -> {
@@ -19,7 +24,9 @@ public class AvariciousGoldHandler {
             if (role.equals(StupidExpress.AVARICIOUS)) {
                 PlayerShopComponent shop = PlayerShopComponent.KEY.get(player);
 
-                shop.reset();
+                shop.setBalance(STARTING_BALANCE);
+
+                gameStartTime = -1;
 
             }
 
