@@ -31,7 +31,7 @@
   "hud.lovers.partner": "Partner",
   "hud.lovers.in_love": "In love with %s!",
   "hud.lovers.notification": "You are in love with %s!",
-  "death_reason.stupid_express.broken_heart": "lost their lover."
+  "death_reason.stupid_express.broken_heart": "lost their lover.",
   
   "commands.stupid_express.set_config_value": "%s has been set to %s!"
 }
