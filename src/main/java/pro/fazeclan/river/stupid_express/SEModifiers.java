@@ -125,7 +125,7 @@ public class SEModifiers {
 
             do {
                 loverTwo = level.getRandomPlayer();
-            } while (loverTwo == null || !gameWorldComponent.isInnocent(loverTwo)
+            } while (loverTwo == null || gameWorldComponent.getRole(loverTwo) == null || !gameWorldComponent.isInnocent(loverTwo)
                     || gameWorldComponent.isRole(loverTwo, WatheRoles.VIGILANTE) || lover.equals(loverTwo));
 
             // assign both lovers
