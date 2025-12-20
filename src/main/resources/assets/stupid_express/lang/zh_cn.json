@@ -10,7 +10,9 @@
   "hud.arsonist.doused.true": "已浇湿",
   "hud.arsonist.doused.false": "未浇湿",
   "item.stupid_express.jerry_can": "汽油桶",
+  "item.stupid_express.jerry_can.tooltip": "与玩家互动，将其浇上油。",
   "item.stupid_express.lighter": "打火机",
+  "item.stupid_express.lighter.tooltip": "当此技能进入冷却时，表示是点燃的时机。\n与其互动即可点燃所有已被浇油的玩家。",
   "death_reason.stupid_express.failed_ignite": "点火失败。",
   "death_reason.stupid_express.ignited": "汽油燃烧而死。",
 
@@ -23,6 +25,7 @@
   "announcement.goals.avaricious": "接近受害者以获取财富！",
   "announcement.role.avaricious": "扒手！",
 
+  "announcement.modifier.lovers": "恋人！",
   "announcement.win.lovers": "恋人胜利！",
   "game.win.lovers": "这对恋人一直活到最后！",
   "tip.lovers.partner": "你的伴侣是 %s！",
@@ -30,4 +33,12 @@
   "hud.lovers.in_love": "爱上了 %s！",
   "hud.lovers.notification": "你爱上了列车上的某人！",
   "death_reason.stupid_express.broken_heart": "殉情而亡。"
+
+  "announcement.modifier.allergic": "过敏患者！",
+  "hud.allergic.hint": "过敏",
+  "hud.allergic.notification": "你的病历显示对多种与 %s 相关的物质过敏。",
+  "death_reason.stupid_express.allergies": "神秘的过敏致死。",
+  "hud.allergic.doctor_heads_up": "列车上可能有人出现过敏反应——请保持距离！",
+
+  "commands.stupid_express.set_config_value": "%s 已成功设置为 %s！"
 }
