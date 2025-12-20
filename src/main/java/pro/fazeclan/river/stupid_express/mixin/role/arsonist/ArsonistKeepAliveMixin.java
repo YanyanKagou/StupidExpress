@@ -20,8 +20,9 @@ public class ArsonistKeepAliveMixin {
     @Inject(
             method = "tickServerGameLoop",
             at = @At(
-                    value = "INVOKE",
-                    target = "Ldev/doctor4t/wathe/cca/GameWorldComponent;getGameStatus()Ldev/doctor4t/wathe/cca/GameWorldComponent$GameStatus;",
+                    value = "FIELD",
+                    target = "Ldev/doctor4t/wathe/game/GameFunctions$WinStatus;NONE:Ldev/doctor4t/wathe/game/GameFunctions$WinStatus;",
+                    ordinal = 3,
                     opcode = Opcodes.GETSTATIC
             ),
             cancellable = true

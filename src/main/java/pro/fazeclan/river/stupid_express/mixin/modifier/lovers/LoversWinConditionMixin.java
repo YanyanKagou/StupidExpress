@@ -18,14 +18,15 @@ import pro.fazeclan.river.stupid_express.modifier.lovers.cca.LoversComponent;
 
 import java.util.ArrayList;
 
-@Mixin(MurderGameMode.class)
+@Mixin(value = MurderGameMode.class, priority = 1500)
 public class LoversWinConditionMixin {
 
     @Inject(
             method = "tickServerGameLoop",
             at = @At(
-                    value = "INVOKE",
-                    target = "Ldev/doctor4t/wathe/cca/GameWorldComponent;getGameStatus()Ldev/doctor4t/wathe/cca/GameWorldComponent$GameStatus;",
+                    value = "FIELD",
+                    target = "Ldev/doctor4t/wathe/game/GameFunctions$WinStatus;NONE:Ldev/doctor4t/wathe/game/GameFunctions$WinStatus;",
+                    ordinal = 3,
                     opcode = Opcodes.GETSTATIC
             ),
             cancellable = true
