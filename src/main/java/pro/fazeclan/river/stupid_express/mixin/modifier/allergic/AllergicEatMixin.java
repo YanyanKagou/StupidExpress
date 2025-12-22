@@ -41,9 +41,6 @@ public abstract class AllergicEatMixin extends LivingEntity {
         Player player = (Player) (Object) this;
         AllergicComponent allergy = AllergicComponent.KEY.get(player);
 
-        StupidExpress.LOGGER.info(String.valueOf(Objects.equals(allergy.getAllergyType(), "food") && stack.is(SEItems.DRINKS)));
-        StupidExpress.LOGGER.info(String.valueOf(Objects.equals(allergy.getAllergyType(), "drink") && !stack.is(SEItems.DRINKS)));
-
         if (!allergy.isAllergic()) return;
         if (Objects.equals(allergy.getAllergyType(), "food") && stack.is(SEItems.DRINKS)) return;
         if (Objects.equals(allergy.getAllergyType(), "drink") && !stack.is(SEItems.DRINKS)) return;
