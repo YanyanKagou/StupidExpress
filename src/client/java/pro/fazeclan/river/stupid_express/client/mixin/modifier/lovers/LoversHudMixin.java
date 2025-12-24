@@ -48,10 +48,10 @@ public abstract class LoversHudMixin {
 
             Component name;
             if (!config.isLoversKnowImmediately()) {
-                name = Component.translatable("hud.lovers.notification");
+                name = Component.translatable("hud.stupid_express.lovers.notification");
                 textXPos -= 14;
             } else {
-                name = Component.translatable("tip.lovers.partner", loverInfo.getProfile().getName());
+                name = Component.translatable("tip.stupid_express.lovers.partner", loverInfo.getProfile().getName());
             }
 
             var role = GameWorldComponent.KEY.get(clientWorld).getRole(clientPlayer);
@@ -91,11 +91,11 @@ public abstract class LoversHudMixin {
         if (WatheClient.isPlayerAliveAndInSurvival()
                 && !config.isLoversKnowImmediately()
                 && loversComponent.isLover()) {
-            stupidexpress$renderLoversHud(renderer, context, Component.translatable("hud.lovers.partner"));
+            stupidexpress$renderLoversHud(renderer, context, Component.translatable("hud.stupid_express.lovers.partner"));
         }
         if (WatheClient.isPlayerSpectatingOrCreative()) {
             stupidexpress$renderLoversHud(renderer, context, Component.translatable(
-                    "hud.lovers.in_love",
+                    "hud.stupid_express.lovers.in_love",
                     lover.getName()
             ));
         }

@@ -37,7 +37,7 @@ public class ArsonistHudMixin {
             context.pose().scale(0.6f, 0.6f, 1.0f);
 
             DousedPlayerComponent component = DousedPlayerComponent.KEY.get(StupidExpressClient.target);
-            Component status = Component.translatable("hud.arsonist.doused." + component.isDoused());
+            Component status = Component.translatable("hud.stupid_express.arsonist.doused." + component.isDoused());
             context.drawString(renderer, status, -renderer.width(status) / 2, 32, 0xfc9526);
 
             context.pose().popPose();

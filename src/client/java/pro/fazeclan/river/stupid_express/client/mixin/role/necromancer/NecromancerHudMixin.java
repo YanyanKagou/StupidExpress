@@ -33,15 +33,15 @@ public class NecromancerHudMixin {
             context.pose().translate(context.guiWidth() / 2.0f, context.guiHeight() / 2.0f + 6.0f, 0.0f);
             context.pose().scale(0.6f, 0.6f, 1.0f);
 
-            Component status = Component.translatable("hud.necromancer.possible_revive");
+            Component status = Component.translatable("hud.stupid_express.necromancer.possible_revive");
 
             NecromancerComponent nc = NecromancerComponent.KEY.get(player.level());
             if (nc.getAvailableRevives() < 1) {
-                status = Component.translatable("hud.necromancer.no_possible_revive");
+                status = Component.translatable("hud.stupid_express.necromancer.no_possible_revive");
             }
             AbilityCooldownComponent cooldown = AbilityCooldownComponent.KEY.get(p);
             if (cooldown.hasCooldown()) {
-                status = Component.translatable("hud.necromancer.cooldown", cooldown.getCooldown()/20);
+                status = Component.translatable("hud.stupid_express.necromancer.cooldown", cooldown.getCooldown()/20);
             }
             context.drawString(renderer, status, -renderer.width(status) / 2, 32, 0x9457ff);
 

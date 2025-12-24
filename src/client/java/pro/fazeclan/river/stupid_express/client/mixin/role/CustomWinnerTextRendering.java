@@ -27,7 +27,7 @@ public class CustomWinnerTextRendering {
         if (!component.hasCustomWinner()) {
             return winMessage;
         }
-        return Component.translatable("game.win." + component.getWinningTextId());
+        return Component.translatable("game.win.stupid_express." + component.getWinningTextId());
     }
 
 }

@@ -27,7 +27,7 @@ public class CustomWinnerAnnouncementMixin {
         if (!component.hasCustomWinner()) {
             return;
         }
-        cir.setReturnValue(Component.translatable("announcement.win." + component.getWinningTextId()).withColor(component.getColor()));
+        cir.setReturnValue(Component.translatable("announcement.win.stupid_express." + component.getWinningTextId()).withColor(component.getColor()));
         cir.cancel();
     }
 

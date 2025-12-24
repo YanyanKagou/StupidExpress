@@ -35,7 +35,7 @@ public class AmnesiacHudMixin {
             context.pose().translate(context.guiWidth() / 2.0f, context.guiHeight() / 2.0f + 6.0f, 0.0f);
             context.pose().scale(0.6f, 0.6f, 1.0f);
 
-            Component status = Component.translatable("hud.amnesiac.select_body");
+            Component status = Component.translatable("hud.stupid_express.amnesiac.select_body");
             context.drawString(renderer, status, -renderer.width(status) / 2, 32, 0x9baae8);
 
             context.pose().popPose();
