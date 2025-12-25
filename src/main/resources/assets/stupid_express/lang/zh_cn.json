@@ -1,12 +1,10 @@
 {
   "announcement.goals.stupid_express.amnesiac": "从尸体上偷取一个身份并扮演该角色！",
-  "announcement.role.stupid_express.amnesiac": "间谍！",
-  "announcement.role.amnesiac": "间谍！",
+  "announcement.role.stupid_express.amnesiac": "失忆者！",
   "hud.stupid_express.amnesiac.select_body": "与其互动以偷取其身份！",
 
   "announcement.goals.stupid_express.arsonist": "将所有玩家浇湿后点燃以获胜！",
   "announcement.role.stupid_express.arsonist": "纵火犯！",
-  "announcement.role.arsonist": "纵火犯！",
   "announcement.win.stupid_express.arsonist": "纵火犯胜利！",
   "game.win.stupid_express.arsonist": "纵火犯已将所有玩家浇湿并点燃了列车！",
   "hud.stupid_express.arsonist.doused.true": "已浇湿",
@@ -20,14 +18,12 @@
 
   "announcement.goals.stupid_express.necromancer": "复活死者，让他们为你效力！",
   "announcement.role.stupid_express.necromancer": "死灵法师！",
-  "announcement.role.necromancer": "死灵法师！",
   "hud.stupid_express.necromancer.possible_revive": "与其互动可将此玩家复活为杀手！",
   "hud.stupid_express.necromancer.no_possible_revive": "在使用能力之前，你的同伴必须死亡！",
   "hud.stupid_express.necromancer.cooldown": "你必须等待 %ss 后才能尝试。",
 
   "announcement.goals.stupid_express.avaricious": "接近受害者以获取财富！",
   "announcement.role.stupid_express.avaricious": "扒手！",
-  "announcement.role.avaricious": "扒手！",
 
   "announcement.modifier.stupid_express.lovers": "恋人！",
   "announcement.win.stupid_express.lovers": "恋人胜利！",
@@ -40,10 +36,10 @@
 
   "announcement.goals.stupid_express.initiate": "除掉另一名新手即可晋升为杀手！",
   "announcement.role.stupid_express.initiate": "新手！",
-  "announcement.role.initiate": "新手！",
   "death_reason.stupid_express.failed_initiation": "新手考核失败。",
 
   "commands.stupid_express.set_config_value": "%s 已成功设置为 %s！"
 }
+
 
 
